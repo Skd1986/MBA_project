@@ -1,0 +1,85 @@
+[
+  {
+    "name": "IT stock",
+    "created_at": "2025-11-01T11:31:50.920455Z",
+    "holdings": {
+      "INFY.NS": 33.34,
+      "TCS.NS": 33.33,
+      "WIPRO.NS": 33.33
+    }
+  },
+  {
+    "name": "Random Portfolio",
+    "created_at": "2025-11-01T11:49:50.992372Z",
+    "holdings": {
+      "LT.NS": 20.0,
+      "BHARTIARTL.NS": 20.0,
+      "SBIN.NS": 20.0,
+      "RELIANCE.NS": 20.0,
+      "HDFCBANK.NS": 20.0
+    }
+  },
+  {
+    "name": "Random PF2",
+    "created_at": "2025-11-02T02:20:41.384822Z",
+    "holdings": {
+      "TITAN.NS": 20.0,
+      "NESTLEIND.NS": 30.0,
+      "SUNPHARMA.NS": 35.0,
+      "LT.NS": 15.0
+    }
+  },
+  {
+    "name": "Random pf3",
+    "created_at": "2025-11-08T08:24:12.359735Z",
+    "holdings": {
+      "RELIANCE.NS": 20.0,
+      "TCS.NS": 20.0,
+      "INFY.NS": 20.0,
+      "ITC.NS": 15.0,
+      "WIPRO.NS": 25.0
+    }
+  },
+  {
+    "name": "Random Pf4",
+    "created_at": "2025-11-08T08:32:55.560345Z",
+    "holdings": {
+      "TCS.NS": 30.0,
+      "ULTRACEMCO.NS": 20.0,
+      "SUNPHARMA.NS": 25.0,
+      "ASIANPAINT.NS": 25.0
+    }
+  },
+  {
+    "name": "Retail stocks",
+    "created_at": "2025-11-08T08:37:48.140487Z",
+    "holdings": {
+      "NESTLEIND.NS": 25.0,
+      "HINDUNILVR.NS": 25.0,
+      "ITC.NS": 25.0,
+      "TITAN.NS": 25.0
+    }
+  },
+  {
+    "name": "Banking stocks",
+    "created_at": "2025-11-23T06:08:30.855555Z",
+    "holdings": {
+      "HDFCBANK.NS": 25.0,
+      "ICICIBANK.NS": 25.0,
+      "KOTAKBANK.NS": 25.0,
+      "SBIN.NS": 25.0
+    }
+  },
+  {
+    "name": "Random portfolio new1",
+    "created_at": "2025-11-23T16:08:09.931939Z",
+    "holdings": {
+      "ABCAPITAL.NS": 16.65,
+      "ADANIENT.NS": 16.67,
+      "ADANIGREEN.NS": 16.67,
+      "ADANIPOWER.NS": 16.67,
+      "ASIANPAINT.NS": 16.67,
+      "DIVISLAB.NS": 16.67
+    }
+  }
+]

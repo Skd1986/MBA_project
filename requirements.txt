@@ -1,0 +1,19 @@
+# Core dependencies
+streamlit==1.50.0
+pandas==2.3.3
+numpy==2.3.4
+
+# Data fetching
+yfinance==0.2.66
+
+# Visualization and reporting
+matplotlib==3.10.7
+reportlab==4.4.5
+openpyxl==3.1.5
+
+# Additional dependencies required by the above packages
+python-dateutil==2.9.0.post0
+pytz==2025.2
+requests==2.32.5
+beautifulsoup4==4.14.2
+pillow==11.3.0
