@@ -77,9 +77,8 @@ def save_tab_metrics(tab_key: str, metrics_df: pd.DataFrame) -> None:
     if tab_key in METRICS_FILES:
         metrics_df.to_parquet(METRICS_FILES[tab_key])
 
-@st.cache_data(show_spinner=False)
 def load_tab_metrics(tab_key: str) -> Optional[pd.DataFrame]:
-    """Load cached metrics for a specific tab."""
+    """Load cached metrics for a specific tab from disk (no Streamlit caching to ensure fresh disk reads)."""
     if tab_key in METRICS_FILES and METRICS_FILES[tab_key].exists():
         return pd.read_parquet(METRICS_FILES[tab_key])
     return None
@@ -804,6 +803,10 @@ def render_stock_screener_ui():
     
     for tab, (tab_key, tab_name) in zip(tabs, tab_configs):
         with tab:
+            # Initialize session state for metrics tracking
+            if 'metrics_loaded' not in st.session_state:
+                st.session_state.metrics_loaded = {}
+            
             # Try to load cached metrics for this tab
             metrics_df = load_tab_metrics(tab_key)
             
@@ -813,6 +816,10 @@ def render_stock_screener_ui():
                     metrics_df = compute_tab_metrics(tab_key, price_df, nifty_series)
                     metrics_df = generate_notes_and_actions(metrics_df)
                     save_tab_metrics(tab_key, metrics_df)
+            
+            # Track in session state that this tab's metrics are available
+            if metrics_df is not None and not metrics_df.empty:
+                st.session_state.metrics_loaded[tab_key] = True
             
             if metrics_df.empty:
                 st.warning("No metrics available for this category.")
@@ -848,11 +855,11 @@ def render_stock_screener_ui():
     
     col_pdf, col_xl = st.columns(2)
     
-    # Load all metrics for export
+    # Load all metrics for export from disk (fresh read every render)
     all_metrics = {}
     for tab_key, tab_name in tab_configs:
         metrics = load_tab_metrics(tab_key)
-        if metrics is not None:
+        if metrics is not None and not metrics.empty:
             all_metrics[tab_name] = metrics
     
     if all_metrics:
